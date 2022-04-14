@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#99A2D6"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/window_userphoto"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/account_circle" />
+
+            <TextView
+                android:id="@+id/window_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:text="user name"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="15dp" />
+
+<!--            <ToggleButton-->
+<!--                android:id="@+id/favorite_btn"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentRight="true"-->
+<!--                android:background="@android:color/transparent"-->
+<!--                android:drawableEnd="@drawable/favorite_empty"-->
+<!--                android:textOff=""-->
+<!--                android:textOn="" />-->
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/window_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/info_icon"
+            android:drawablePadding="5dp"
+            android:text="category"
+            android:textColor="#000"
+            android:layout_marginBottom="10dp"/>
+
+        <ImageView
+            android:id="@+id/window_image"
+            android:layout_width="194dp"
+            android:layout_height="194dp"
+            app:srcCompat="@drawable/ic_launcher_background"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/window_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="ffffdfdff"
+            android:textColor="#000"/>
+    </LinearLayout>
+
+</LinearLayout>

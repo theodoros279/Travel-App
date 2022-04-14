@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Maps_API</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="welcome_signup">Welcome! Sign Up For an Account</string>
+    <string name="email_empty">Enter your email</string>
+    <string name="check_email">check the link we have sent to your email</string>
+    <string name="password_empty">Enter your password</string>
+    <string name="incorrect_credentials">Email or Password is incorrect</string>
+    <string name="verify_email">Please verify your email first</string>
+    <string name="name_empty">Please enter your name</string>
+    <string name="password_validation">Password must be more than 6 characters</string>
+    <string name="email_validation">Email is not valid</string>
+    <string name="email_verification_sent">Verification email has been sent</string>
+    <string name="email_verification_not_sent">Verification email could not been sent</string>
+    <string name="update_btn">update profile</string>
+    <string name="delete_account_btn">delete account</string>
+    <string name="sign_out_btn">sign out</string>
+    <string name="dialogTitle">Are you sure you want to delete your account permanently?</string>
+    <string name="account_deleted">Account deleted</string>
+    <string name="decline">No</string>
+    <string name="accept">Yes</string>
+    <string name="singed_out">signed out successfully</string>
+    <string name="image_not_seleted">image not selected</string>
+    <string name="image_uploaded">Image uploaded successfully</string>
+    <string name="no_updates">nothing new to update</string>
+    <string name="wait">"please wait "</string>
+    <string name="select_image">please select image</string>
+
+    <string-array name="categories_array">
+        <item></item>
+        <item>Activities</item>
+        <item>Landmarks</item>
+        <item>Hidden Gems</item>
+        <item>Nature</item>
+        <item>Beaches</item>
+    </string-array>
+</resources>
