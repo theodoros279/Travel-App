@@ -32,7 +32,7 @@ class SignUpActivity : AppCompatActivity() {
         val userPassword = findViewById<TextInputEditText>(R.id.password_input)
         val registerBtn = findViewById<Button>(R.id.register_btn)
 
-//register user
+        //register user
         registerBtn.setOnClickListener {
             when {
                 TextUtils.isEmpty(userName.text.toString().trim()) -> {

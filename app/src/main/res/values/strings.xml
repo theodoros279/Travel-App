@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Maps_API</string>
+    <string name="app_name">Travel App</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
     <string name="title_activity_maps">MapsActivity</string>

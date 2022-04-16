@@ -22,7 +22,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="My Places"
+                android:text="My POI"
                 android:layout_gravity="center"
                 android:textSize="23dp"
                 android:textColor="@color/white"
