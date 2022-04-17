@@ -55,6 +55,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
     private var lastKnownLocation: Location? = null
     private var cameraPosition: CameraPosition? = null
+    private val defaultLocation = LatLng(-33.8523341, 151.2106085)
 
     private lateinit var dialog: Dialog
     private val db = Firebase.firestore
@@ -150,8 +151,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     private fun calculateDirections(marker: Marker) {
-        val originLat = currentLatLng.latitude.toString()
-        val originLong = currentLatLng.longitude.toString()
+        var originLat: String = defaultLocation.latitude.toString()
+        var originLong: String = defaultLocation.longitude.toString()
+
+        if (currentLatLng != null) {
+             originLat = currentLatLng.latitude.toString()
+             originLong = currentLatLng.longitude.toString()
+        }
         val destinationLat = marker.position.latitude
         val destinationLong = marker.position.longitude
         val apiKey = "AIzaSyAf5Axwtr0RXd1OFPZQh054c-6xUPr9UtM"
@@ -245,7 +251,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     } else {
                         Log.d("tag", "Current location is null. Using defaults.")
                         Log.e("tag", "Exception: %s", task.exception)
-                        val defaultLocation = LatLng(-33.8523341, 151.2106085)
                         mMap?.moveCamera(CameraUpdateFactory
                             .newLatLngZoom(defaultLocation, DEFAULT_ZOOM.toFloat()))
                         mMap?.uiSettings?.isMyLocationButtonEnabled = false

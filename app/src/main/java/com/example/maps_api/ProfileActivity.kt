@@ -30,7 +30,7 @@ class ProfileActivity : AppCompatActivity() {
     private var mAuth = FirebaseAuth.getInstance()
     private val db = Firebase.firestore
     private val userID = mAuth.currentUser!!.uid
-    private val docReference = db.document("users/$userID")
+    private val userReference = db.document("users/$userID")
     private var selectedPhotoUri : Uri? = null
     lateinit var toggle: ActionBarDrawerToggle
 
@@ -55,7 +55,7 @@ class ProfileActivity : AppCompatActivity() {
                     closeOptionsMenu()
                 }
                 .setPositiveButton(resources.getString(R.string.accept)) { dialog, which ->
-                    docReference.delete()
+                    userReference.delete()
                     mAuth.currentUser!!.delete()
                     Snackbar.make(it,
                         R.string.account_deleted,
@@ -120,7 +120,7 @@ class ProfileActivity : AppCompatActivity() {
                     if (it.isSuccessful) {
                         it.addOnSuccessListener { task ->
                             var imageUrl = task.toString()
-                            docReference.update("profilePhoto", imageUrl)
+                            userReference.update("profilePhoto", imageUrl)
                             Snackbar.make(view,
                                 R.string.image_uploaded,
                                 Snackbar.LENGTH_SHORT).show()
@@ -139,7 +139,7 @@ class ProfileActivity : AppCompatActivity() {
         val emailTextView = findViewById<TextView>(R.id.display_email)
         val nameTextView = findViewById<TextView>(R.id.display_name)
         val profilePhoto = findViewById<CircleImageView>(R.id.display_profile_photo)
-        docReference.get()
+        userReference.get()
             .addOnSuccessListener { document ->
                 if (document != null) {
                     nameTextView.text = document.getString("firstName")

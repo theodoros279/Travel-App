@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.maps_api.adapters.MyPlacesAdapter
 import com.example.maps_api.models.MyPlacesModel
-import com.google.android.gms.maps.model.LatLng
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
@@ -23,7 +22,7 @@ class MyPlacesActivity : AppCompatActivity() {
     private val db = Firebase.firestore
     private var mAuth = FirebaseAuth.getInstance()
     private val userID = mAuth.currentUser!!.uid
-    private val docReference = db.document("users/$userID")
+    private val userReference = db.document("users/$userID")
 
     private lateinit var myPlacesAdapter: MyPlacesAdapter
     private lateinit var myPlacesView: RecyclerView
@@ -40,7 +39,7 @@ class MyPlacesActivity : AppCompatActivity() {
     }
 
     private fun showMyPlaces() {
-        docReference.collection("myPoi").addSnapshotListener { value, e ->
+        userReference.collection("myPoi").addSnapshotListener { value, e ->
             if (e != null) {
                 Log.d("tag", "Listen failed.", e)
             } else {
