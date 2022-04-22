@@ -52,7 +52,7 @@ class NotificationHelper (base: Context) : ContextWrapper(base){
     }
 
     companion object {
-        const val CHANNEL_ONE_ID = "com.example.tomowen.notificatonsexample.ONE"
+        const val CHANNEL_ONE_ID = "Channel.ONE"
         const val CHANNEL_ONE_NAME = "Channel One"
     }
 }

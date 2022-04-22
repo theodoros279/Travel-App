@@ -30,20 +30,11 @@
                 android:id="@+id/window_username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="3dp"
                 android:text="user name"
                 android:textAppearance="?attr/textAppearanceHeadline6"
                 android:textSize="15dp" />
-
-<!--            <ToggleButton-->
-<!--                android:id="@+id/favorite_btn"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_alignParentRight="true"-->
-<!--                android:background="@android:color/transparent"-->
-<!--                android:drawableEnd="@drawable/favorite_empty"-->
-<!--                android:textOff=""-->
-<!--                android:textOn="" />-->
 
         </RelativeLayout>
 
@@ -52,9 +43,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/info_icon"
-            android:drawablePadding="5dp"
+            android:drawablePadding="3dp"
             android:text="category"
             android:textColor="#000"
+            android:textSize="12dp"
             android:layout_marginBottom="10dp"/>
 
         <ImageView
@@ -70,7 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="ffffdfdff"
+            android:text=""
             android:textColor="#000"/>
     </LinearLayout>
 

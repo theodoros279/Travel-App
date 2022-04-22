@@ -1,6 +1,7 @@
 package com.example.maps_api
 
 import android.Manifest
+import android.app.ActivityManager
 import android.app.Dialog
 import android.content.ContentValues
 import android.content.Context
@@ -32,6 +33,8 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
+import com.google.android.material.chip.Chip
+import com.google.android.material.chip.ChipGroup
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
@@ -132,6 +135,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     val poiLoc = LatLng(poiLatitude, poiLongitude)
 
                     val info = CustomInfoWindowModel(poiUserName, poiUserPhoto, poiCategory, poiDesc, poiImage)
+
                     val markers = mMap?.addMarker(
                         MarkerOptions()
                             .position(poiLoc)
@@ -207,10 +211,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             mMap?.setOnInfoWindowClickListener {
                 MaterialAlertDialogBuilder(this)
                     .setTitle("go to location?")
-                    .setNegativeButton(resources.getString(R.string.decline)) { dialog, which ->
+                    .setNegativeButton(resources.getString(R.string.decline)) { _, _ ->
                         closeOptionsMenu()
                     }
-                    .setPositiveButton(resources.getString(R.string.accept)) { dialog, which ->
+                    .setPositiveButton(resources.getString(R.string.accept)) { _, _ ->
                         calculateDirections(it)
                     }
                     .show()
@@ -261,7 +265,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             Log.e("Exception: %s", e.message, e)
         }
     }
-
 
     private fun updateLocationUI() {
         if (mMap == null) {
@@ -388,7 +391,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             observer.selectImage()
         }
 
-
         submitPoiBtn.setOnClickListener {
             when {
                 TextUtils.isEmpty(poiDescription.text.toString()) -> {
@@ -459,12 +461,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         btn.setOnClickListener{
             uploadPoiImage()
         }
-    }
-
-    private fun showImage() {
-        val showSelectedImage = dialog.findViewById<ImageView>(R.id.show_selected_image)
-        val selectedPhotoUri = observer.getSelectedImage()
-        Glide.with(this).load(selectedPhotoUri).into(showSelectedImage)
     }
 
     private fun addPoiToDatabase() {

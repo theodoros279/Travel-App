@@ -31,10 +31,13 @@ class CustomInfoWindowAdapter(val context: Context) : GoogleMap.InfoWindowAdapte
 
         Glide.with(mInfoView)
             .load(mInfoWindow.userPhoto)
-            .placeholder(R.drawable.ic_launcher_background)
+            .placeholder(R.drawable.account_circle)
             .into(windowUserPhoto)
+
         windowCategory.text = mInfoWindow.category
+
         windowDesc.text = mInfoWindow.description
+
         Glide.with(mInfoView)
             .load(mInfoWindow.image)
             .placeholder(R.drawable.ic_launcher_background)
