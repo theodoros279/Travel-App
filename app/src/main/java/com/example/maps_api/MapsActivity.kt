@@ -1,7 +1,6 @@
 package com.example.maps_api
 
 import android.Manifest
-import android.app.ActivityManager
 import android.app.Dialog
 import android.content.ContentValues
 import android.content.Context
@@ -24,7 +23,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import com.bumptech.glide.Glide
+import com.example.maps_api.adapters.CustomInfoWindowAdapter
 import com.example.maps_api.models.CustomInfoWindowModel
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -33,8 +32,6 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
-import com.google.android.material.chip.Chip
-import com.google.android.material.chip.ChipGroup
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar

@@ -27,7 +27,7 @@
             android:name=".adapters.MyPlacesAdapter"
             android:exported="false" />
         <activity
-            android:name=".CustomInfoWindowAdapter"
+            android:name=".adapters.CustomInfoWindowAdapter"
             android:exported="false" />
 
         <meta-data

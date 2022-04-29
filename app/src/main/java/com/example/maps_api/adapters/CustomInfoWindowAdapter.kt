@@ -1,4 +1,4 @@
-package com.example.maps_api
+package com.example.maps_api.adapters
 
 import android.app.Activity
 import android.content.Context
@@ -8,6 +8,7 @@ import android.widget.AdapterView
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.maps_api.R
 import com.example.maps_api.models.CustomInfoWindowModel
 import com.google.android.gms.maps.GoogleMap
@@ -40,6 +41,7 @@ class CustomInfoWindowAdapter(val context: Context) : GoogleMap.InfoWindowAdapte
 
         Glide.with(mInfoView)
             .load(mInfoWindow.image)
+            .diskCacheStrategy(DiskCacheStrategy.ALL)
             .placeholder(R.drawable.ic_launcher_background)
             .into(windowImg)
 
