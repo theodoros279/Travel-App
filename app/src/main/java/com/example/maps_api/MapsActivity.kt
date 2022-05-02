@@ -212,7 +212,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                         closeOptionsMenu()
                     }
                     .setPositiveButton(resources.getString(R.string.accept)) { _, _ ->
-                        calculateDirections(it)
+                        if (locationPermissionGranted) {
+                            calculateDirections(it)
+                        }
                     }
                     .show()
             }
@@ -275,7 +277,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 mMap?.isMyLocationEnabled = false
                 mMap?.uiSettings?.isMyLocationButtonEnabled = false
                 lastKnownLocation = null
-                getLocationPermission()
             }
         } catch (e: SecurityException) {
             Log.e("Exception: %s", e.message, e)
